@@ -13,8 +13,8 @@
         </ol>
     </li>
     <li>Part 2<ol style="list-style-type: circle;">
-            <li>Converts the contents read into memory into JSON format and writes it out to a file called data2.json which only contains rows of data that have the valid numeric profit values. Each row in the Array contains data columns like year, rank, company, revenue, and profit.</li>
             <li>Orders the data in memory based on the profit value.</li>
+            <li>Converts the contents read into memory into JSON format and writes it out to a file called data2.json which only contains rows of data that have the valid numeric profit values. Each row in the Array contains data columns like year, rank, company, revenue, and profit.</li>
             <li>Prints the top 20 rows in memory with the highest profit values&nbsp;</li>
         </ol>
     </li>
