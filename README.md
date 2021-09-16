@@ -1,4 +1,4 @@
-<p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>This is simple python program that reads a csv file using pandas library</strong></p>
+<p style='margin-top:0in;margin-right:0in;margin-bottom:8.0pt;margin-left:0in;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>This is simple python program that reads a csv file and writes to a JSON file using pandas library</strong></p>
 <ul style="list-style-type: disc;">
     <li>Create an environment &amp; Install dependencies found in the .py files using pip in the command prompt.</li>
     <li>Run the file in the command prompt - run.bat</li>
