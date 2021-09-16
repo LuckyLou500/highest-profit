@@ -12,7 +12,10 @@ url = 'https://gist.githubusercontent.com/bobbae/b4eec5b5cb0263e7e3e63a6806d045f
 #Once the data is read into memory it prints out how many rows of the data is in the CSV data.
 df = pd.read_csv(url)
 
-print('\nThis is how many rows of the data that are in the CSV file: ' + str(f"{len(df),}") + ' Rows.')
+#Subtract the labels off the top of the dataframe
+length = len(df) - 1
+
+print('\nThis is how many rows of the data that are in the CSV file: ' + str(f"{length:,}") + ' Rows.')
 
 
 #Then it removes all the rows with 'profit' that are not a numerical value.
@@ -21,23 +24,24 @@ df['Profit (in millions)'] = pd.to_numeric(df['Profit (in millions)'], errors='c
 #Then it prints out how many rows of data are left, after removing all the rows with invalid non-numeric profit column data. 
 df = df.dropna(subset=['Profit (in millions)'])
 
-print('\nThis is how many rows of the data that are in the CSV data after removing all rows with profit that is not numerical value: ' + str(f"{len(df):,}") + ' Rows.')
+#Subtract the labels off the top of the dataframe
+length = len(df) - 1
+
+print('\nThis is how many rows of the data that are in the CSV data after removing all rows with profit that is not numerical value: ' + str(f"{length:,}") + ' Rows.')
 
 
 #Part 2
 
-#Converts the contents read into memory into JSON format and writes it out to a file called data2.json which only contains rows of data that have the valid numeric profit values. Each row in the Array contains data columns like year, rank, company, revenue, and profit.
-with open('data2.json', 'w') as f:
-    f.write(df.to_json(orient='records', lines=True))
 
 #Orders the data based on the profit value.
 
 df = df.sort_values(["Profit (in millions)"], ascending=False)
 
+#Converts the contents read into memory into JSON format and writes it out to a file called data2.json which only contains rows of data that have the valid numeric profit values. Each row in the Array contains data columns like year, rank, company, revenue, and profit.
+with open('data2.json', 'w') as f:
+    f.write(df.to_json(orient='records', lines=True))
 
 #Prints the top 20 rows with the highest profit values 
-
-
 df = df.nlargest(20,'Profit (in millions)',keep='all')
 
 print("\nThe top 20 rows with the highest profit values:\n")
