@@ -32,7 +32,6 @@ print('\nThis is how many rows of the data that are in the CSV data after removi
 
 #Part 2
 
-
 #Orders the data based on the profit value.
 
 df = df.sort_values(["Profit (in millions)"], ascending=False)
